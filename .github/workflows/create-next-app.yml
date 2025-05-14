@@ -3,7 +3,7 @@ name: Create and Deploy Next.js App
 on:
   push:
     branches:
-      - main  # Se ejecutará al hacer push a la rama principal
+      - main  # Este flujo se ejecuta cuando haces push a la rama principal
 
 jobs:
   build:
@@ -26,12 +26,12 @@ jobs:
     - name: Install dependencies
       run: |
         cd frontend
-        npm install
+        npm install  # Instala las dependencias necesarias
 
     - name: Commit and push changes
       run: |
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'actions@github.com'
         git add .
-        git commit -m "Añadido proyecto Next.js en frontend"
-        git push origin main
+        git commit -m "Add Next.js app to frontend"
+        git push origin main  # Esto hace commit de los cambios y hace push a GitHub
