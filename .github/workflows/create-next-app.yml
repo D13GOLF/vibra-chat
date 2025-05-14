@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16'  # Usamos la versión recomendada de Node.js
+      node-version: '18'  # Usamos la versión 18, que es la requerida por create-next-app
 
     - name: Create Next.js app
       run: |
