@@ -1,0 +1,37 @@
+name: Create and Deploy Next.js App
+
+on:
+  push:
+    branches:
+      - main  # Se ejecutará al hacer push a la rama principal
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # Usamos la versión recomendada de Node.js
+
+    - name: Create Next.js app
+      run: |
+        cd frontend
+        npx create-next-app@latest .  # Esto generará el proyecto Next.js dentro de la carpeta `frontend/`
+
+    - name: Install dependencies
+      run: |
+        cd frontend
+        npm install
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'actions@github.com'
+        git add .
+        git commit -m "Añadido proyecto Next.js en frontend"
+        git push origin main
