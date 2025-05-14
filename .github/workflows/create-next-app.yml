@@ -16,9 +16,9 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-      node-version: '18'  # Usamos la versión 18, que es la requerida por create-next-app
+        node-version: '18'  # Usamos la versión 18, que es la requerida por create-next-app
 
-    - name: Create Next.js app
+    - name: Create Next.js app in frontend/
       run: |
         cd frontend
         npx create-next-app@latest .  # Esto generará el proyecto Next.js dentro de la carpeta `frontend/`
