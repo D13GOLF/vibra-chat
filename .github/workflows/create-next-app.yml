@@ -18,6 +18,10 @@ jobs:
       with:
         node-version: '18'  # Usamos la versión 18, que es la requerida por create-next-app
 
+    - name: Remove any existing files in frontend/
+      run: |
+        rm -rf frontend/*  # Elimina todo el contenido de la carpeta `frontend/`
+
     - name: Create Next.js app in frontend/
       run: |
         cd frontend
